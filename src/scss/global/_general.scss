@@ -1,0 +1,66 @@
+@use "./fonts";
+
+* {
+  font-family: fonts.$neutralFont;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //border: 1px red solid;
+
+}
+
+html {
+  font-size: 10px;
+
+  @media (max-width: 900px) {
+    font-size: 9px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 7px;
+  }
+}
+
+body {
+  //background-color: var(--colorFondo);
+  margin: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  //border: 1px var(--colorPrincipal) solid;
+}
+
+a {
+  text-decoration: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--secondaryColor);
+  letter-spacing: 3px;
+  cursor: pointer;
+  font-family: fonts.$mainFont;
+
+  span {
+    font-family: fonts.$codeFont;
+    color: var(--mainColor);
+    margin: 10px 0;
+    font-size: 3rem;
+    margin-left: 10px;
+  }
+}

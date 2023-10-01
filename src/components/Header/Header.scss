@@ -1,0 +1,119 @@
+@use "../../scss/global/fonts";
+@use "../../scss/global/constants";
+
+.header {
+  background-color: var(--neutralColdColor);
+  display: flex;
+  justify-content: center;
+  
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    overflow: hidden;
+    max-width: 1200px;
+
+ 
+    .cols {
+      width: 50%;
+      @media (max-width: 1100px) {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .topline {
+      display: block;
+      position: relative;
+      font-size: 35px;
+      letter-spacing: 2px;
+      color: black;
+    }
+
+    h1 {
+      display: block;
+      font-size: 7rem;
+      font-weight: 900;
+      color: var(--mainColor);
+
+      .name {
+        color: var(--secondaryColor);
+        font-family: fonts.$secondaryFont;
+      }
+
+      .roles {
+        color: var(--secondaryColor);
+      }
+    }
+
+    .phrase {
+      display: block;
+      width: 90%;
+      font-size: 2.5rem;
+      font-family: fonts.$codeFont;
+      font-weight: 400;
+      font-style: italic;
+      margin: 10px 0;
+      @media (max-width: 1100px) {
+        text-align: center;
+      }
+    }
+
+    .imgbox {
+      position: relative;
+      width: 100%;
+
+      img {
+        position: relative;
+        width: 700px;
+        top: -5px;
+        right: 40px;
+        z-index: 10;
+      }
+
+      #pink-splash {
+        position: absolute;
+        top: 0%;
+        left: -20px;
+        filter: brightness(0.8);
+        width: 850px;
+      }
+
+      @media (max-width: 1100px) {
+        margin: 50px;
+        img {
+          width: 100%;
+          top: 0px;
+          right: 0px;
+        }
+
+        #pink-splash {
+          top: 0%;
+          left: 0px;
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: constants.$mobileWidth) {
+      flex-wrap: wrap;
+      padding: 0;
+      padding-top: 80px;
+
+      h1 {
+        font-size: 5rem;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

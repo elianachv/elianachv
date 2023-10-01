@@ -1,0 +1,180 @@
+.button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 10px 5px;
+  padding: 8px 25px;
+  font-weight: 400;
+  background: var(--lightColor);
+  box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.3);
+ 
+  &:focus{
+    outline: none;
+
+  }
+
+  &-default,
+  &-main {
+    @extend .button;
+    background-color: var(--mainColor);
+  }
+
+  &-secondary {
+    @extend .button;
+    background-color: var(--secondaryColor);
+  }
+
+  &-light {
+    @extend .button;
+    background-color: var(--lightColor);
+  }
+
+  &-secondary-light {
+    @extend .button;
+    background-color: var(--secondaryLightColor);
+  }
+}
+
+.button-container {
+  width: 100%;
+  position: relative;
+
+  &-centered {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.emphasis {
+  &-main {
+    &:hover {
+      background: var(--mainColor);
+    }
+  }
+
+  &-secondary {
+    &:hover {
+      background: var(--secondaryColor);
+    }
+  }
+
+  &-light {
+    &:hover {
+      background: var(--lightColor);
+    }
+  }
+
+  &-secondary-light {
+    &:hover {
+      background: var(--secondaryLightColor);
+    }
+  }
+
+  
+  &-complementary {
+    &:hover {
+      background: var(--complementaryColor);
+    }
+  }
+}
+
+.icono {
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  &-ok {
+    @extend .icono;
+    color: var(--colorOk);
+  }
+
+  &-warn {
+    @extend .icono;
+    color: var(--colorAdvertencia);
+  }
+  &-error {
+    @extend .icono;
+    color: var(--colorError);
+  }
+
+  &-principal {
+    @extend .icono;
+    color: var(--colorPrincipal);
+  }
+
+  &-secundario {
+    @extend .icono;
+    color: var(--colorSecundario);
+  }
+
+  &-complementario {
+    @extend .icono;
+    color: var(--colorComplementario);
+  }
+}
+
+.botonWhatsappPequeño {
+  font-size: 4rem;
+  font-weight: bold;
+  color: aliceblue;
+  background-color: rgb(59, 196, 59);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0px 5px;
+}
+
+.botonFacebookPequeño {
+  font-size: 4rem;
+  background-color: #3b5998;
+  margin: 0px 5px;
+  margin: 0px 5px;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.botonLinkedinPequeño {
+  font-size: 4rem;
+  background-color: #0e76a8;
+  margin: 0px 5px;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.botonInstagramPequeño {
+  color: white;
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  padding: 8px;
+  font-size: 4rem;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+.botonPintrestPequeño {
+  font-size: 4rem;
+  background-color: red;
+  margin: 0px 5px;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.botonEmailPequeño {
+  font-size: 4rem;
+  background-color: var(--colorPrincipal);
+  margin: 0px 5px;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.icono {
+}

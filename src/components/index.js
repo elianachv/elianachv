@@ -1,0 +1,11 @@
+export { default as MenuBar } from "./MenuBar/MenuBar";
+export { default as Header } from "./Header/Header";
+export { default as About } from "./About/About";
+export { default as CodePhrase } from "./CodePhrase/CodePhrase";
+export { default as Services } from "./Services/Services";
+export { default as ServiceDetail } from "./ServiceDetail/ServiceDetail";
+export { default as Values } from "./Values/Values";
+export { default as Enterprises } from "./Enterprises/Enterprises";
+export { default as Testimonials } from "./Testimonials/Testimonials";
+export { default as Contact } from "./Contact/Contact";
+export { default as Footer } from "./Footer/Footer";

@@ -1,0 +1,41 @@
+@use "../../scss/global/fonts";
+$wallpaperPath: "~/src/assets/wallpaper.jpeg";
+
+.frontPage {
+  //background-image: url("../../assets/wallpaper2.jpeg");
+  //background-image: url($wallpaperPath);
+  background: var(--lightColor);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100px;
+  }
+
+  &--name {
+    font-family: fonts.$secondaryFont;
+    font-size: 100px;
+    margin: 0 20px;
+    color: var(--secondaryColor);
+  }
+
+  &__roles {
+    font-family: fonts.$codeFont;
+    font-weight: 900;
+    font-size: 4.5rem;
+    color: var(--mainColor);
+
+  }
+}

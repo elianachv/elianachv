@@ -1,0 +1,144 @@
+@use "../../scss/global/fonts";
+@use "../../scss/global/constants";
+
+$transitionTime: 0.6s;
+$menuColor: var(--neutralColor);
+
+.menuBar {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 80px;
+  z-index: 100;
+  position: static;
+  top: 0;
+  background-color: $menuColor;
+
+  &__logo {
+    transition: all linear $transitionTime;
+
+    .mobile {
+      display: none;
+      &-icono {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--secondaryColor);
+        cursor: pointer;
+      }
+
+      @media (max-width: constants.$mobileWidth) {
+        display: flex;
+      }
+    }
+
+    @media (max-width: constants.$mobileWidth) {
+      padding: 10px 15px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $menuColor;
+
+    }
+  }
+
+  &__options {
+    display: flex;
+    transition: all $transitionTime linear;
+
+    li {
+      list-style: none;
+      margin: 0 15px;
+
+      a {
+        font-size: 2rem;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: var(--mainColor);
+      }
+
+      &:hover {
+        a {
+          color: var(--secondaryColor);
+        }
+      }
+
+      @media (max-width: constants.$mobileWidth) {
+        border-bottom: 1px var(--secondaryColor) solid;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: constants.$mobileWidth) {
+      padding: 15px 30px;
+      margin: 0;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      left: -100vw;
+      opacity: 0;
+      background-color: $menuColor;
+    }
+  }
+
+  &__socialNetworks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transitionTime linear;
+
+    a {
+      margin: 10px;
+    }
+    .icon {
+      font-size: 30px;
+      color: var(--secondaryColor);
+
+      &:hover {
+        color: var(--mainColor);
+      }
+
+      @media (max-width: constants.$mobileWidth) {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: constants.$mobileWidth) {
+      width: 100%;
+      position: relative;
+      left: -100vw;
+      opacity: 0;
+      border-bottom: solid 2px var(--secondaryColor);
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      background-color: $menuColor;
+    }
+  }
+
+  #mobileCheck {
+    display: none;
+
+    &:checked ~ ul {
+      left: 0;
+      opacity: 1;
+    }
+
+    &:checked ~ .menuBar__socialNetworks {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: constants.$mobileWidth) {
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    position: absolute;
+    background-color: transparent;
+  }
+}

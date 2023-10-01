@@ -1,0 +1,234 @@
+@use "../global/fonts";
+
+$props: "xxl" "main" 100, "xxl" "secondary" 100, "xxl" "complementary" 100,
+  "xxl" "default" 100, "xxl" "main" 200, "xxl" "secondary" 200,
+  "xxl" "complementary" 200, "xxl" "default" 200, "xxl" "main" 300,
+  "xxl" "secondary" 300, "xxl" "complementary" 300, "xxl" "default" 300,
+  "xxl" "main" 400, "xxl" "secondary" 400, "xxl" "complementary" 400,
+  "xxl" "default" 400, "xxl" "main" 500, "xxl" "secondary" 500,
+  "xxl" "complementary" 500, "xxl" "default" 500, "xxl" "main" 600,
+  "xxl" "secondary" 600, "xxl" "complementary" 600, "xxl" "default" 600,
+  "xl" "main" 100, "xl" "secondary" 100, "xl" "complementary" 100,
+  "xl" "default" 100, "xl" "main" 200, "xl" "secondary" 200,
+  "xl" "complementary" 200, "xl" "default" 200, "xl" "main" 300,
+  "xl" "secondary" 300, "xl" "complementary" 300, "xl" "default" 300,
+  "xl" "main" 400, "xl" "secondary" 400, "xl" "complementary" 400,
+  "xl" "default" 400, "xl" "main" 500, "xl" "secondary" 500,
+  "xl" "complementary" 500, "xl" "default" 500, "xl" "main" 600,
+  "xl" "secondary" 600, "xl" "complementary" 600, "xl" "default" 600,
+  "l" "main" 100, "l" "secondary" 100, "l" "complementary" 100,
+  "l" "default" 100, "l" "main" 200, "l" "secondary" 200,
+  "l" "complementary" 200, "l" "default" 200, "l" "main" 300,
+  "l" "secondary" 300, "l" "complementary" 300, "l" "default" 300,
+  "l" "main" 400, "l" "secondary" 400, "l" "complementary" 400,
+  "l" "default" 400, "l" "main" 500, "l" "secondary" 500,
+  "l" "complementary" 500, "l" "default" 500, "l" "main" 600,
+  "l" "secondary" 600, "l" "complementary" 600, "l" "default" 600,
+  "m" "main" 100, "m" "secondary" 100, "m" "complementary" 100,
+  "m" "default" 100, "m" "main" 200, "m" "secondary" 200,
+  "m" "complementary" 200, "m" "default" 200, "m" "main" 300,
+  "m" "secondary" 300, "m" "complementary" 300, "m" "default" 300,
+  "m" "main" 400, "m" "secondary" 400, "m" "complementary" 400,
+  "m" "default" 400, "m" "main" 500, "m" "secondary" 500,
+  "m" "complementary" 500, "m" "default" 500, "m" "main" 600,
+  "m" "secondary" 600, "m" "complementary" 600, "m" "default" 600,
+  "s" "main" 100, "s" "secondary" 100, "s" "complementary" 100,
+  "s" "default" 100, "s" "main" 200, "s" "secondary" 200,
+  "s" "complementary" 200, "s" "default" 200, "s" "main" 300,
+  "s" "secondary" 300, "s" "complementary" 300, "s" "default" 300,
+  "s" "main" 400, "s" "secondary" 400, "s" "complementary" 400,
+  "s" "default" 400, "s" "main" 500, "s" "secondary" 500,
+  "s" "complementary" 500, "s" "default" 500, "s" "main" 600,
+  "s" "secondary" 600, "s" "complementary" 600, "s" "default" 600,
+  "xs" "main" 100, "xs" "secondary" 100, "xs" "complementary" 100,
+  "xs" "default" 100, "xs" "main" 200, "xs" "secondary" 200,
+  "xs" "complementary" 200, "xs" "default" 200, "xs" "main" 300,
+  "xs" "secondary" 300, "xs" "complementary" 300, "xs" "default" 300,
+  "xs" "main" 400, "xs" "secondary" 400, "xs" "complementary" 400,
+  "xs" "default" 400, "xs" "main" 500, "xs" "secondary" 500,
+  "xs" "complementary" 500, "xs" "default" 500, "xs" "main" 600,
+  "xs" "secondary" 600, "xs" "complementary" 600, "xs" "default" 600,
+  "xxs" "main" 100, "xxs" "secondary" 100, "xxs" "complementary" 100,
+  "xxs" "default" 100, "xxs" "main" 200, "xxs" "secondary" 200,
+  "xxs" "complementary" 200, "xxs" "default" 200, "xxs" "main" 300,
+  "xxs" "secondary" 300, "xxs" "complementary" 300, "xxs" "default" 300,
+  "xxs" "main" 400, "xxs" "secondary" 400, "xxs" "complementary" 400,
+  "xxs" "default" 400, "xxs" "main" 500, "xxs" "secondary" 500,
+  "xxs" "complementary" 500, "xxs" "default" 500, "xxs" "main" 600,
+  "xxs" "secondary" 600, "xxs" "complementary" 600, "xxs" "default" 600;
+
+@each $size, $color, $weight in $props {
+  $finalColor: black;
+  $sizeValue: 1rem;
+
+  @if $color == "main" {
+    $finalColor: var(--mainColor);
+  } @else if $color == "secondary" {
+    $finalColor: var(--secondaryColor);
+  } @else if $color == "complementary" {
+    $finalColor: var(--complementaryColor);
+  }
+
+  @if $size == "xxl" {
+    $sizeValue: 4rem;
+  } @else if $size == "xl" {
+    $sizeValue: 3.5rem;
+  } @else if $size == "l" {
+    $sizeValue: 2.8rem;
+  } @else if $size == "m" {
+    $sizeValue: 2.1rem;
+  } @else if $size == "s" {
+    $sizeValue: 1.8rem;
+  } @else if $size == "xs" {
+    $sizeValue: 1.6rem;
+  } @else if $size == "xxs" {
+    $sizeValue: 1.3rem;
+  }
+
+  .p-#{$size}-#{$color}-#{$weight} {
+    text-align: left;
+    color: $finalColor;
+    font-size: $sizeValue;
+    font-weight: $weight;
+    font-family: fonts.$neutralFont;
+  }
+
+  .t-#{$size}-#{$color}-#{$weight} {
+    text-align: left;
+    color: $finalColor;
+    font-size: $sizeValue;
+    font-weight: $weight;
+    margin-bottom: 15px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.frase {
+  height: 200px;
+  background-color: var(--colorPrincipal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  color: white;
+
+  @media (max-width: 1150px) {
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.p {
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
+
+  &-main {
+    color: var(--mainColor);
+  }
+
+  &-secondary {
+    color: var(--secondaryColor);
+  }
+
+  &-light {
+    color: var(--lightColor);
+  }
+
+  &-secondary-light {
+    color: var(--secondaryLightColor);
+  }
+
+  &-complementary {
+    color: var(--complementaryColor);
+  }
+
+  &-white {
+    color: white;
+  }
+
+  &-error {
+    color: red;
+  }
+
+  &-cursive {
+    font-style: italic;
+  }
+
+  &-bold {
+    font-style: bold;
+  }
+
+  &-cita {
+    color: white;
+    font-style: italic;
+  }
+
+  &-capitalized {
+    text-transform: capitalize;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-limited {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &-font-main {
+    font-family: fonts.$mainFont;
+  }
+  &-font-secondary {
+    font-family: fonts.$secondaryFont;
+  }
+  &-font-code {
+    font-family: fonts.$codeFont;
+  }
+}
+
+.contenedor-texto {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  &-unico {
+    @extend .contenedor-texto;
+    margin-left: 25px;
+  }
+
+  &-derecha {
+    @extend .contenedor-texto;
+    justify-content: start;
+  }
+
+  &-centro {
+    @extend .contenedor-texto;
+    justify-content: center;
+  }
+}
+
+.swal2-popup.swal2-toast h2.swal2-title {
+  font-size: 1.6rem;
+}
+
+.swal2-popup.swal2-toast div.swal2-html-container,
+.swal2-popup.swal2-toast button.swal2-styled {
+  font-size: 1.5rem;
+}

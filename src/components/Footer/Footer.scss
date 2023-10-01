@@ -1,0 +1,48 @@
+@use "../../scss/global/constants";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: var(--secondaryLightColor);
+
+  &__container {
+    &-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 50px;
+
+      .socialnetworks {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //transition: all $transitionTime linear;
+
+        a {
+          margin: 10px;
+        }
+        .icon {
+          font-size: 30px;
+          color: var(--secondaryColor);
+
+          &:hover {
+            color: var(--mainColor);
+          }
+
+          @media (max-width: constants.$mobileWidth) {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+    &-copyright {
+      background: black;
+      padding: 5px;
+
+      span {
+        color: red;
+        margin: 0 15px;
+      }
+    }
+  }
+}
