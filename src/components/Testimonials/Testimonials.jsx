@@ -33,7 +33,7 @@ const Testimonials = () => {
         <div className="testimonials__container-details">
           {testimonials.map((t) => {
             return (
-              <div>
+              <div key={t.name}>
                 <img src="/icons/quote.png" alt="quote-icon" />
                 <p className="p-m-main-600 p-center">{t.name}</p>
                 <p className="p-s-secondary-600 p-center">{t.charge}</p>

@@ -1,7 +1,7 @@
-import { BsInstagram, BsLinkedin, BsGithub } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import SocialNetworks from "../SocialNetworks/SocialNetworks";
 import "./MenuBar.scss";
+import Logo from "../Logo/Logo";
 
 function MenuBar() {
   return (
@@ -9,9 +9,7 @@ function MenuBar() {
       <input type="checkbox" id="mobileCheck" />
 
       <div className="menuBar__logo">
-        <div id="logo">
-          {`<`} Eli <span>{` {dev} `}</span> {`/>`}
-        </div>
+        <Logo />
         <div className="mobile">
           <label htmlFor="mobileCheck">
             <GiHamburgerMenu className="mobile-icono" />
@@ -35,15 +33,7 @@ function MenuBar() {
       </ul>
 
       <div className="menuBar__socialNetworks">
-        <a href="http://www.instagram.com/_elianachv" target="_blank">
-          <BsInstagram className="icon" />
-        </a>
-        <a href="http://www.linkedin.com/elianachv" target="_blank">
-          <BsLinkedin className="icon" />
-        </a>
-        <a href="http://www.github.com/elianachv" target="_blank">
-          <BsGithub className="icon" />
-        </a>
+        <SocialNetworks />
       </div>
     </nav>
   );

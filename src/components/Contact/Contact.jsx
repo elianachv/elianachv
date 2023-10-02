@@ -1,10 +1,11 @@
 import { React, useState } from "react";
 import { notify } from "../../utils/notifications";
-import "./Contact.scss";
-
+import { info } from "../../constants/info";
 import { BsWhatsapp } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdLocationOn } from "react-icons/md";
+import emailjs from "@emailjs/browser";
+import "./Contact.scss";
 
 function Contact() {
   const initialMessage = {
@@ -15,6 +16,7 @@ function Contact() {
   };
 
   const [message, setMessage] = useState(initialMessage);
+  const [sending, setSending] = useState(false);
 
   const manageForm = (e) => {
     const { name, value } = e.target;
@@ -42,11 +44,32 @@ function Contact() {
     e.preventDefault();
 
     if (validateMessage()) {
-      notify("top-end", "success").fire(
-        "Tu mensaje fue enviado",
-        "Pronto me contactaré contigo"
-      );
-      console.log(message);
+      setSending(true);
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_EMAIL_SERVICE_ID,
+          import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+          e.target,
+          import.meta.env.VITE_EMAIL_KEY
+        )
+        .then(() => {
+          setSending(false);
+          notify("top-end", "success").fire(
+            "Tu mensaje fue enviado",
+            "Pronto me contactaré contigo"
+          );
+
+          document.getElementById("form").reset();
+          // window.scroll(0, 0);
+        })
+        .catch((error) => {
+          setSending(false);
+          console.log(error);
+          notify("top-end", "error").fire(
+            "Hubo un problema",
+            "Intenta nuevamente"
+          );
+        });
     } else {
       notify("top-end", "error").fire(
         "La información del formulario no es correcta",
@@ -56,7 +79,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contacto" className="contact">
       <h2 className="p-xxl-secondary-600 p-center">¿Tienes una idea?</h2>
       <h3 className="p-l-default-300 p-center p-cursive">
         No dudes en contactarme
@@ -65,18 +88,23 @@ function Contact() {
       <br />
       <div className="contact__container">
         <div className="contact__container-info">
-          <p className="p-m-default-400">
-            <span className="p-l-main-600">
-              <BsWhatsapp />
-            </span>
-            +57 3212123655
-          </p>
-          <p className="p-m-default-400">
-            <span className="p-l-main-600">
-              <HiOutlineMail />
-            </span>
-            elianachavezv@gmail.com contacto@elianachv.dev
-          </p>
+          <a href={info.links.whatsapp} target="_blank">
+            <p className="p-m-default-400">
+              <span className="p-l-main-600">
+                <BsWhatsapp />
+              </span>
+              +57 3212123655
+            </p>
+          </a>
+
+          <a href={`mailto:${info.correos.contacto}`}>
+            <p className="p-m-default-400">
+              <span className="p-l-main-600">
+                <HiOutlineMail />
+              </span>
+              elianachavezv@gmail.com
+            </p>
+          </a>
           <p className="p-m-default-400">
             <span className="p-l-main-600">
               <MdLocationOn />
@@ -85,7 +113,7 @@ function Contact() {
           </p>
         </div>
         <div className="contact__container-form">
-          <form action="" onSubmit={sendMessage}>
+          <form id="form" onSubmit={sendMessage}>
             <div className="customer-section">
               <div className="contact-content">
                 <label className="p-xxs-default-400" htmlFor="name">
@@ -101,7 +129,7 @@ function Contact() {
               </div>
 
               <div className="contact-content">
-                <label className="p-xxs-default-400" htmlFor="name">
+                <label className="p-xxs-default-400" htmlFor="email">
                   Correo
                 </label>
                 <input
@@ -116,7 +144,7 @@ function Contact() {
 
             <div className="project-section">
               <div className="contact-content">
-                <label className="p-xxs-default-400" htmlFor="name">
+                <label className="p-xxs-default-400" htmlFor="project">
                   Proyecto
                 </label>
                 <input
@@ -128,7 +156,7 @@ function Contact() {
                 />
               </div>
               <div className="contact-content">
-                <label className="p-xxs-default-400" htmlFor="name">
+                <label className="p-xxs-default-400" htmlFor="message">
                   Mensaje
                 </label>
                 <textarea
@@ -142,7 +170,9 @@ function Contact() {
                 />
               </div>
 
-              <button className="button">Enviar</button>
+              <button className="button">
+                {sending ? "Enviando ..." : "Enviar"}
+              </button>
             </div>
           </form>
         </div>

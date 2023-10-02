@@ -11,9 +11,9 @@ function Header() {
     "Mentora",
     "Emprendedora",
   ];
-  
+
   return (
-    <div className="header">
+    <div id="inicio" className="header">
       <div className="header__wrapper">
         <div className="cols cols0">
           <span className="topline">¡Hola!</span>
@@ -29,12 +29,17 @@ function Header() {
           </p>
           <p className="phrase">No lo sé todo. Pero me le mido a todo.</p>
           <div className="button-container">
-            <button className="button-light emphasis-secondary-light">
-              Descargar CV
-            </button>
-            <button className="button-light emphasis-secondary-light">
-              Contrátame
-            </button>
+            <a href="/pdf/cv-eliana-chavez.pdf" download>
+              <button className="button-light emphasis-secondary-light">
+                Descargar CV
+              </button>
+            </a>
+
+            <a href="#contacto">
+              <button className="button-light emphasis-secondary-light">
+                Contrátame
+              </button>
+            </a>
           </div>
         </div>
 

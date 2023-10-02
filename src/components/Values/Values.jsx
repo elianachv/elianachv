@@ -49,7 +49,7 @@ function Values() {
         <div className="values__container-acrostic">
           {acrostic.map((value) => {
             return (
-              <div>
+              <div key={value.letter}>
                 <p className="p-l-default-400">
                   <span
                     className="letter p-xxl-main-600 p-font-main"

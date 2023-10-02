@@ -43,7 +43,7 @@ const Enterprises = () => {
         >
           {logos.map((logo) => {
             return (
-              <a href={logo.url} target="_blank">
+              <a href={logo.url} target="_blank" key={logo.url}>
                 <div className="logo">
                   <img src={logo.logo} alt="" />
                 </div>

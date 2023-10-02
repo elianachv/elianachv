@@ -1,0 +1,22 @@
+@use "../../scss/global/fonts";
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--secondaryColor);
+  letter-spacing: 3px;
+  cursor: pointer;
+  font-family: fonts.$mainFont;
+  margin: 0 10px;
+
+  span {
+    font-family: fonts.$codeFont;
+    color: var(--mainColor);
+    margin: 10px 0;
+    font-size: 3rem;
+    margin-left: 10px;
+  }
+}
