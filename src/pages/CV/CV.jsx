@@ -1,5 +1,6 @@
 import { React, useEffect } from "react";
 import ClassList from "classlist";
+import { IoIosArrowDown } from "react-icons/io";
 import "./CV.scss";
 
 function CV() {
@@ -64,6 +65,226 @@ function CV() {
     },
   ];
 
+  const skills = [
+    {
+      type: "Desarrollo",
+      icon: "/img/dev.png",
+      experience: "2 años de experiencia",
+      tech: [
+        {
+          name: "Git",
+          level: 60,
+          icon: "/img/git.png",
+        },
+        {
+          name: "SQL",
+          level: 60,
+          icon: "/img/sql.png",
+        },
+        {
+          name: "Swagger",
+          level: 70,
+          icon: "/img/swagger.png",
+        },
+      ],
+    },
+    {
+      type: "Backend",
+      icon: "/img/back.png",
+      experience: "2 años de experiencia",
+      tech: [
+        {
+          name: "Java",
+          level: 75,
+          icon: "/img/java.png",
+        },
+        {
+          name: "Spring Boot",
+          level: 60,
+          icon: "/img/spring.png",
+        },
+        {
+          name: "NodeJS",
+          level: 60,
+          icon: "/img/nodejs.png",
+        },
+        {
+          name: "Python",
+          level: 30,
+          icon: "/img/python.png",
+        },
+        {
+          name: "Firebase",
+          level: 45,
+          icon: "/img/firebase.png",
+        },
+      ],
+    },
+    {
+      type: "Frotend",
+      icon: "/img/front.png",
+      experience: "1 año de experiencia",
+      tech: [
+        {
+          name: "HTML",
+          level: 50,
+          icon: "/img/html.png",
+        },
+        {
+          name: "CSS",
+          level: 50,
+          icon: "/img/css.png",
+        },
+        {
+          name: "SASS",
+          level: 45,
+          icon: "/img/sass.png",
+        },
+        {
+          name: "JS",
+          level: 50,
+          icon: "/img/js.png",
+        },
+        {
+          name: "React",
+          level: 50,
+          icon: "/img/react.png",
+        },
+        {
+          name: "Angular",
+          level: 5,
+          icon: "/img/angular.png",
+        },
+        {
+          name: "Android",
+          level: 50,
+          icon: "/img/android.png",
+        },
+      ],
+    },
+    {
+      type: "Cloud",
+      icon: "/img/cloud.png",
+      experience: "1 año de experiencia",
+      tech: [
+        {
+          name: "AWS",
+          level: 45,
+          icon: "/img/aws.png",
+        },
+        {
+          name: "Jenkins",
+          level: 15,
+          icon: "/img/jenkins.png",
+        },
+        {
+          name: "Terraform",
+          level: 15,
+          icon: "/img/terraform.png",
+        },
+        {
+          name: "Ansible",
+          level: 0,
+          icon: "/img/ansible.png",
+        },
+        {
+          name: "Bash",
+          level: 30,
+          icon: "/img/bash.png",
+        },
+      ],
+    },
+    {
+      type: "Otros",
+      icon: "/img/other.png",
+      experience: "1 año de experiencia",
+      tech: [
+        {
+          name: "Scrum",
+          level: 80,
+          icon: "/img/scrum.png",
+        },
+        {
+          name: "Jira",
+          level: 60,
+          icon: "/img/jira.png",
+        },
+        {
+          name: "Excel",
+          level: 20,
+          icon: "/img/excel.png",
+        },
+        {
+          name: "PowerBI",
+          level: 5,
+          icon: "/img/powerbi.png",
+        },
+      ],
+    },
+    {
+      type: "Blandas",
+      icon: "/img/softskills.png",
+      experience: "2 años de experiencia",
+      tech: [
+        {
+          name: "Comunicación",
+          level: 80,
+          icon: "/img/communication.png",
+        },
+        {
+          name: "Liderazgo",
+          level: 50,
+          icon: "/img/leadership.png",
+        },
+        {
+          name: "Hablar en público",
+          level: 65,
+          icon: "/img/public-speaking.png",
+        },
+        {
+          name: "Inglés",
+          level: 60,
+          icon: "/img/english.png",
+        },
+      ],
+    },
+  ];
+
+  const certificates = [
+    {
+      name: "AWS Certified Cloud Practitioner",
+      image: "/img/aws-cloud-practicioner.png",
+      entity: "AWS",
+      date: "Sep 01, 2023",
+      active: true,
+      url: "https://www.credly.com/badges/aec63f24-bbd0-4b74-9055-6c5e8c5f054a",
+    },
+    {
+      name: "AWS Academy Graduate - AWS Academy Cloud Foundations",
+      image: "/img/aws-foundation.png",
+      entity: "AWS",
+      date: "Oct 28, 2020",
+      active: true,
+      url: "https://www.credly.com/badges/dd0f0ef6-b3ab-4d5e-b94f-40700bd9dac6",
+    },
+    {
+      name: "Scrum Foundation Professional Certification - SFPC™",
+      image: "/img/scrum-foundation.png",
+      entity: "CertiProf",
+      date: "Sep 15, 2023",
+      active: true,
+      url: "https://www.credly.com/badges/c984dacb-8b10-450f-92e7-74e99a878d9e",
+    },
+    {
+      name: "Lifelong Learning",
+      image: "/img/certiprof-lll.png",
+      entity: "CertiProf",
+      date: "Sep 15, 2023",
+      active: true,
+      url: "https://www.credly.com/badges/3b2422f8-45a4-4a90-b795-10bbabe57dc5",
+    },
+  ];
+
   const selectOption = (option) => {
     const actualTab = new ClassList(document.querySelector(`.tab.active`));
     const actualContent = new ClassList(
@@ -80,6 +301,18 @@ function CV() {
     content.add("active");
   };
 
+  const displaySkills = (skill) => {
+    const sectionSelected = new ClassList(
+      document.querySelector(`.list.${skill}`)
+    );
+    sectionSelected.toggle("close");
+    sectionSelected.toggle("open");
+
+    const arrow = new ClassList(document.querySelector(`.arrow.${skill}`));
+    arrow.toggle("close");
+    arrow.toggle("open");
+  };
+
   useEffect(() => {
     selectOption("education");
   }, []);
@@ -87,7 +320,11 @@ function CV() {
   return (
     <div className="cv page">
       <h1 className="p-xxl-secondary-600 p-center">Hoja de vida</h1> <br />
-      <h2 className="p-m-default-400 p-center">Mi trayectoria</h2>
+      <h2 className="p-m-default-400 p-center">Mi trayectoria</h2> <br />
+      <p className="p-xs-secondary-400 p-center cita p-font-main">
+        Además de mi expertice técnica te ofresco auténtica pasión por lo que
+        hago e identificación y alineación con tu propósito
+      </p>
       <div className="cv__container">
         <div className="cv__container-tabs">
           <div
@@ -168,11 +405,71 @@ function CV() {
           </div>
 
           <div className="content certificates" data-content id="certificates">
-            <h3 className="p-l-main-600">Certificates</h3>
+            <div className="container">
+              {certificates.map((c) => {
+                return (
+                  <a href={c.url} key={c.name} target="_blank">
+                    <img src={c.image} />
+                    <div>
+                      <p className="p-s-main-600">{c.name}</p>
+                      <p className="p-s-default-600">{c.entity}</p>
+                      <p className="p-xs-default-400">{c.date}</p>
+                      <span>{c.active}</span>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           <div className="content skills" data-content id="skills">
-            <h3 className="p-l-main-600">Skills</h3>
+            <div className="container">
+              {skills.map((skill) => {
+                return (
+                  <div className="data" key={skill.type}>
+                    <div
+                      className="header"
+                      onClick={() => displaySkills(skill.type)}
+                    >
+                      <img src={skill.icon} />
+
+                      <div>
+                        <h2 className="p-m-secondary-600">{skill.type}</h2>
+                        <p className="p-xxs-default-500">{skill.experience}</p>
+                      </div>
+
+                      <div
+                        className={`p-m-secondary-600 arrow close ${skill.type}`}
+                      >
+                        <IoIosArrowDown />
+                      </div>
+                    </div>
+
+                    <div
+                      className={`list close ${skill.type}`}
+                      key={skill.type}
+                    >
+                      {skill.tech.map((t) => {
+                        return (
+                          <div className="info" key={t.name}>
+                            <div className="title">
+                              <div className="main">
+                                <img src={t.icon} />
+                                <h3 className="p-xxs-default-500">{t.name}</h3>
+                              </div>
+                              <p className="p-xs-default-400">{t.level}%</p>
+                            </div>
+                            <div className="bar">
+                              <span style={{ width: `${t.level}%` }}></span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

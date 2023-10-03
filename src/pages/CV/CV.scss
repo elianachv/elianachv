@@ -1,4 +1,9 @@
 .cv {
+  .cita {
+    width: 80%;
+    max-width: 500px;
+    margin: 5px;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -56,8 +61,8 @@
       width: 90%;
       margin-bottom: 100px;
 
-      .content.education,
-      .content.work {
+      div.content.education,
+      div.content.work {
         div.data {
           margin-bottom: 10px;
           display: flex;
@@ -124,12 +129,159 @@
         }
       }
 
+      div.content.skills {
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: start;
+
+          .data {
+            border: white solid 2px;
+            background: white;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+
+            .header {
+              //border: green solid 4px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: white;
+              margin-bottom: 10px;
+              cursor: pointer;
+
+              img {
+                width: 30px;
+                margin-right: 20px;
+                //border: green solid 4px;
+              }
+
+              div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              }
+
+              .arrow {
+                margin-left: 20px;
+                cursor: pointer;
+                transition: 0.4s;
+
+                &.close {
+                  transform: rotate(0deg);
+                }
+
+                &.open {
+                  transform: rotate(180deg);
+                }
+              }
+            }
+
+            .list {
+              transition: 0.6s;
+
+              &.close {
+                height: 0;
+                overflow: hidden;
+              }
+
+              &.open {
+                height: auto;
+              }
+              .info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 10px 0;
+
+                div.title {
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+
+                  .main {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    margin-bottom: 10px;
+
+                    img {
+                      width: 30px;
+                      margin-right: 8px;
+                    }
+                  }
+                }
+
+                .bar {
+                  width: 100%;
+                  height: 5px;
+                  border-radius: 25px;
+                  background: var(--lightColor);
+                  margin: 0px;
+
+                  span {
+                    display: block;
+                    background: var(--mainColor);
+                    height: 5px;
+                    border-radius: 25px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      div.content.certificates {
+        .container {
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          a {
+            background: white;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            margin: 10px;
+
+            width: 400px;
+            padding: 15px;
+
+            img {
+              width: 150px;
+              margin-right: 20px;
+            }
+          }
+
+          @media (max-width: 400px) {
+            width: 100%;
+
+            a {
+              img {
+                width: 100px;
+              }
+            }
+          }
+        }
+      }
+
       [data-content] {
         display: none;
       }
 
       div.active[data-content] {
         display: block;
+        max-width: 100%;
       }
     }
   }
