@@ -1,5 +1,4 @@
 import {
-  MenuBar,
   Header,
   About,
   Services,
@@ -7,14 +6,12 @@ import {
   Enterprises,
   Testimonials,
   Contact,
-  Footer,
 } from "../../components";
 
-import "./Home.scss";
+
 function Home() {
   return (
-    <div className="home">
-      <MenuBar />
+    <div className="home page">
       <Header />
       <About />
       <Services />
@@ -22,7 +19,6 @@ function Home() {
       <Values />
       <Testimonials />
       <Contact />
-      <Footer />
     </div>
   );
 }

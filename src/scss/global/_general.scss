@@ -24,11 +24,9 @@ html {
 }
 
 body {
-  //background-color: var(--colorFondo);
-  margin: auto;
   overflow-y: scroll;
   overflow-x: hidden;
-  //border: 1px var(--colorPrincipal) solid;
+  background-color: var(--neutralColdColor);
 }
 
 a {
@@ -43,3 +41,14 @@ a {
   display: none !important;
 }
 
+div.page {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  margin-top: 90px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: var(--neutralColdColor);
+}

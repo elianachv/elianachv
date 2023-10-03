@@ -1,9 +1,7 @@
 import React from "react";
-import { BsInstagram, BsLinkedin, BsGithub } from "react-icons/bs";
 import { AiFillHeart } from "react-icons/ai";
+import { SocialNetworks, Logo } from "../index";
 import "./Footer.scss";
-import SocialNetworks from "../SocialNetworks/SocialNetworks";
-import Logo from "../Logo/Logo";
 
 function Footer() {
   return (
@@ -25,7 +23,7 @@ function Footer() {
           </p>
         </div>
 
-        <a href="#inicio">
+        <a href="#menu">
           <div className="up-button">
             <img src="/icons/up.png" />
           </div>

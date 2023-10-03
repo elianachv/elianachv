@@ -3,7 +3,9 @@
 .footer {
   display: flex;
   flex-direction: column;
-  background: var(--secondaryLightColor);
+  background: var(--neutralColor);
+  width: 100%;
+  max-width: 100vw;
 
   &__container {
     &-info {
@@ -11,6 +13,10 @@
       flex-wrap: wrap;
       justify-content: space-between;
       padding: 0 50px;
+
+      @media (max-width: 500px) {
+        justify-content: center;
+      }
     }
 
     &-copyright {

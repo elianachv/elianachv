@@ -87,7 +87,7 @@ function Contact() {
       <br />
       <br />
       <div className="contact__container">
-        <div className="contact__container-info">
+        <div className="contact__container-info hidden">
           <a href={info.links.whatsapp} target="_blank">
             <p className="p-m-default-400">
               <span className="p-l-main-600">

@@ -1,11 +1,12 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import SocialNetworks from "../SocialNetworks/SocialNetworks";
+import { Link, NavLink } from "react-router-dom";
 import "./MenuBar.scss";
 import Logo from "../Logo/Logo";
 
 function MenuBar() {
   return (
-    <nav className="menuBar">
+    <nav id="menu" className="menuBar">
       <input type="checkbox" id="mobileCheck" />
 
       <div className="menuBar__logo">
@@ -19,16 +20,16 @@ function MenuBar() {
 
       <ul className="menuBar__options">
         <li>
-          <a href="#">Inicio</a>
+          <NavLink to="/">Inicio</NavLink>
         </li>
         <li>
-          <a href="#">Hoja de vida</a>
+          <NavLink to="/cv">Hoja de Vida</NavLink>
         </li>
         <li>
-          <a href="#">Portafolio</a>
+          <NavLink to="/portafolio">Portafolio</NavLink>
         </li>
         <li>
-          <a href="#">Blog</a>
+          <NavLink to="/blog">Blog</NavLink>
         </li>
       </ul>
 

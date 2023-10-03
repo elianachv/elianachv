@@ -1,4 +1,5 @@
 import code from "../../assets/code3.png";
+import { Link } from "react-router-dom";
 import "./About.scss";
 function About() {
   const facts = [
@@ -26,9 +27,11 @@ function About() {
 
           <br />
           <div className="button-container-centered">
-            <button className="button-light emphasis-secondary-light">
-              Ver hoja de vida
-            </button>
+            <Link to="/cv">
+              <button className="button-light emphasis-secondary-light">
+                Ver hoja de vida
+              </button>
+            </Link>
           </div>
         </div>
 

@@ -1,9 +1,16 @@
 import "./scss/styles.scss";
-import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
+import { Home, CV } from "./pages";
+import { MenuBar, Footer } from "./components";
 function App() {
   return (
     <>
-      <Home />
+      <MenuBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cv" element={<CV />} />
+      </Routes>
+      <Footer />
     </>
   );
 }

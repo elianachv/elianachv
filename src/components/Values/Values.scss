@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 100vw;
  
 
   p.info {
@@ -17,7 +18,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-    max-width: 1200px;
     width: 100%;
 
     &-acrostic {
