@@ -56,6 +56,10 @@ $menuColor: var(--neutralColor);
         text-decoration: none;
         text-transform: capitalize;
         color: var(--mainColor);
+
+        &.active {
+          color: var(--secondaryColor);
+        }
       }
 
       &:hover {

@@ -20,7 +20,12 @@ function MenuBar() {
 
       <ul className="menuBar__options">
         <li>
-          <NavLink to="/">Inicio</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Inicio
+          </NavLink>
         </li>
         <li>
           <NavLink to="/cv">Hoja de Vida</NavLink>
