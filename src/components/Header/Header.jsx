@@ -1,4 +1,4 @@
-import TypedEffect from "../../hooks/TypedEffect/TypedEffect";
+import { TypedEffect } from "../../hooks/";
 import profileImage from "../../assets/profile-img2.png";
 import pinkSplash from "../../assets/pink-splash.png";
 import "./Header.scss";
