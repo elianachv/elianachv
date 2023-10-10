@@ -1,10 +1,22 @@
+import { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import SocialNetworks from "../SocialNetworks/SocialNetworks";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./MenuBar.scss";
 import Logo from "../Logo/Logo";
 
 function MenuBar() {
+  const resetMenu = () => {
+    const menu = document.getElementById("mobileCheck");
+    if (menu.checked) {
+      menu.checked = false;
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", resetMenu);
+  }, []);
+
   return (
     <nav id="menu" className="menuBar">
       <input type="checkbox" id="mobileCheck" />
