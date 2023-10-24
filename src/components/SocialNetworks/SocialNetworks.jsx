@@ -5,7 +5,7 @@ import "./SocialNetworks.scss";
 function SocialNetworks() {
   return (
     <div className="socialnetworks">
-      <a href="http://www.instagram.com/_elianachv" target="_blank">
+      <a className="invisible" href="http://www.instagram.com/_elianachv" target="_blank">
         <BsInstagram className="icon" />
       </a>
       <a href="http://www.linkedin.com/in/elianachv" target="_blank">

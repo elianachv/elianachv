@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import SocialNetworks from "../SocialNetworks/SocialNetworks";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./MenuBar.scss";
 import Logo from "../Logo/Logo";
 
@@ -22,7 +22,9 @@ function MenuBar() {
       <input type="checkbox" id="mobileCheck" />
 
       <div className="menuBar__logo">
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <div className="mobile">
           <label htmlFor="mobileCheck">
             <GiHamburgerMenu className="mobile-icono" />
@@ -45,7 +47,7 @@ function MenuBar() {
         <li>
           <NavLink to="/portafolio">Portafolio</NavLink>
         </li>
-        <li>
+        <li className="invisible">
           <NavLink to="/blog">Blog</NavLink>
         </li>
       </ul>

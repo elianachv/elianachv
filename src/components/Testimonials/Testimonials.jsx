@@ -9,14 +9,15 @@ const Testimonials = () => {
       testimonial: "Excelente",
     },
     {
-      name: "Andres Salazar",
+      name: "Andrés Salamanca",
       charge: "CEO - Grupo Mirai",
-      testimonial: "Excelente",
+      testimonial: "Trabajar con Eliana ha sido un acierto en todo sentido",
     },
     {
-      name: "Nicolas Salinas",
-      charge: "CEO - Ethicos",
-      testimonial: "Excelente",
+      name: "Aparicio Peña",
+      charge: "Consultor Independiente",
+      testimonial:
+        "Si me preguntaran si te volvería a contratar, a ojos cerrados diría que si",
     },
   ];
   return (
@@ -38,10 +39,10 @@ const Testimonials = () => {
                 <p className="p-m-main-600 p-center">{t.name}</p>
                 <p className="p-s-secondary-600 p-center">{t.charge}</p>
                 <p className="p-s-default-400 p-justify">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Architecto, nesciunt excepturi! Illo inventore debitis sint
-                  quisquam aspernatur? Ducimus voluptate voluptas natus ipsum
-                  fugiat? Aspernatur cupiditate a quia explicabo nemo at!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  rerum praesentium molestias asperiores perspiciatis, voluptate
+                  nisi debitis labore eius ipsam laboriosam libero. Quibusdam
+                  labore quas, voluptas eum eligendi nostrum esse.
                 </p>
               </div>
             );

@@ -12,12 +12,13 @@ function Services() {
     {
       name: "Desarrollo",
       description:
-        "Mi fuerte es el backend con Java. Sin embargo me caracterizo por aprender rápido y mi disposión para ayudarte en lo que necesites.",
+        "¿Necesitas un desarrollo nuevo o apoyo con uno existente? Te puedo ayudar de la siguiente manera:",
       tasks: [
+        "Páginas web estáticas sencillas, ideales para eventos, presentación de un proyecto o para empezar a tener presencia en internet (cómo esta que estás viendo)",
         "Diseño, análisis, implementación y mantenimiento de REST APIS en Java y Js",
         "Desarrollo y mantenimiento de aplicaciones nativas Android",
       ],
-      notes: [],
+      notes: ["Revisa mis habilidades en la sección de hoja de vida para descubrir en que más puedo ayudarte"],
       icon: <VscCode className="p-xxl-secondary-400" />,
       new: false,
       active: true,
@@ -48,7 +49,7 @@ function Services() {
         "Acompañamiento y consultoría para proyectos universitarios",
       ],
       notes: [
-        "NO realizo trabajos a demanda, hago acompañamiento para garatizar que aprendas",
+        "NO realizo trabajos a demanda, hago acompañamiento para garantizar que aprendas",
       ],
       icon: <LiaChalkboardTeacherSolid className="p-xxl-secondary-400" />,
       new: false,
@@ -75,6 +76,17 @@ function Services() {
       active: false,
       priceInfo: null,
     },
+    {
+      name: "Automatización",
+      description: "¿Tienes muchos procesos manuales que te hacen perder tiempo? Te ayudo a potenciar tu productividad automatizando algunos procesos",
+      tasks: ["Creación de playbooks en ansible para automatización de la configuración de tu máquina"],
+      notes: [],
+      icon: <BsFiletypeDoc className="p-xxl-secondary-400" />,
+      new: true,
+      active: false,
+      priceInfo: null,
+    },
+
 
   ];
   const [serviceSelected, setServiceSelected] = useState({});
@@ -102,7 +114,7 @@ function Services() {
                 {service.new ? (
                   <MdFiberNew className="new p-xxl-secondary-400" />
                 ) : null}
-                <p className="p-m-complementary-500">{service.name}</p>
+                <p className="p-m-main-500">{service.name}</p>
                 <button
                   className="button-secondary-light emphasis-light"
                   onClick={() => selectService(service)}

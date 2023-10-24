@@ -4,11 +4,19 @@
   &__container {
     background-color: var(--neutralColdColor);
     width: 550px;
-    height: 500px;
+    max-height: 850px;
     border-radius: 15px;
     padding: 30px;
     padding-top: 60px;
     position: relative;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     li {
       margin-left: 50px;

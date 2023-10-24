@@ -22,7 +22,7 @@ function ServiceDetail({ service, setShowModal }) {
         <ul>
           {service.notes.map((note) => {
             return (
-              <p className="p-m-default-500 p-error p-center">Nota: {note}</p>
+              <p className="p-m-secondary-500 p-center">Nota: {note}</p>
             );
           })}
         </ul>

@@ -1,6 +1,6 @@
 import "./scss/styles.scss";
 import { Routes, Route } from "react-router-dom";
-import { Home, CV, Blog } from "./pages";
+import { Home, CV, Blog, Portafolio, Error } from "./pages";
 import { MenuBar, Footer } from "./components";
 function App() {
   return (
@@ -9,7 +9,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cv" element={<CV />} />
+        <Route path="/portafolio" element={<Portafolio />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </>
